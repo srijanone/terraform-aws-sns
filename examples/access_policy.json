@@ -1,0 +1,31 @@
+{
+    "Version": "2008-10-17",
+    "Id": "__default_policy_ID",
+    "Statement": [
+      {
+        "Sid": "__default_statement_ID",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "*"
+        },
+        "Action": [
+          "SNS:GetTopicAttributes",
+          "SNS:SetTopicAttributes",
+          "SNS:AddPermission",
+          "SNS:RemovePermission",
+          "SNS:DeleteTopic",
+          "SNS:Subscribe",
+          "SNS:ListSubscriptionsByTopic",
+          "SNS:Publish",
+          "SNS:Receive"
+        ],
+        "Resource": "arn:aws:sns:us-west-2:921420897323:test_sns",
+        "Condition": {
+          "StringEquals": {
+            "AWS:SourceOwner": "921420897323",
+            "sns:Protocol": "https"
+          }
+        }
+      }
+    ]
+  }
